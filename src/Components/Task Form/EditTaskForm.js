@@ -19,8 +19,10 @@ export const EditTaskForm = ({ formEditState, setFormEditState }) => {
   const [startDate, setStartDate] = useState(null);
   const [time, setTime] = useState(null);
   const [userID, setUserId] = useState("");
+  const [selectedUser, setUser] = useState("");
   const allUsers = users.users;
-
+  console.log(taskToEdit);
+  console.log(allUsers);
   const getData = useCallback(async () => {
     await dispatch(getAllUsers());
   }, [dispatch]);
@@ -29,11 +31,25 @@ export const EditTaskForm = ({ formEditState, setFormEditState }) => {
   }, [formEditState, dispatch, getData]);
 
   useEffect(() => {
-    if (taskToEdit.task_msg) {
+    if (taskToEdit.task_msg && allUsers.length > 0) {
+      // Processing time to make it in date format
+      let tempDate = new Date();
+      let ts = taskToEdit.task_time % 60;
+      let tm = (taskToEdit.task_time / 60) % 60;
+      let th = (taskToEdit.task_time / 3600) % 60;
+      tempDate.setHours(parseInt(th), parseInt(tm), parseInt(ts));
+
+      // Processing user to get assigned username
+      const assigned_user = allUsers.find(
+        (item) => item.user_id === taskToEdit.user_id
+      );
+      // Filling all the fields
       setDesc(taskToEdit.task_msg);
       setStartDate(new Date(taskToEdit.task_date));
+      setTime(tempDate);
+      setUser(assigned_user.name);
     }
-  }, [taskToEdit]);
+  }, [allUsers, taskToEdit]);
 
   function cancelTask() {
     setFormEditState("none");
@@ -122,7 +138,7 @@ export const EditTaskForm = ({ formEditState, setFormEditState }) => {
               }}
             >
               <option key="asd" hidden>
-                Choose....
+                {selectedUser}
               </option>
               {allUsers.map((item) => (
                 <option key={item.id} value={item.id}>
