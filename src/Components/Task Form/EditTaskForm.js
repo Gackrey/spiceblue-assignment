@@ -21,8 +21,6 @@ export const EditTaskForm = ({ formEditState, setFormEditState }) => {
   const [userID, setUserId] = useState("");
   const [selectedUser, setUser] = useState("");
   const allUsers = users.users;
-  console.log(taskToEdit);
-  console.log(allUsers);
   const getData = useCallback(async () => {
     await dispatch(getAllUsers());
   }, [dispatch]);
@@ -47,6 +45,7 @@ export const EditTaskForm = ({ formEditState, setFormEditState }) => {
       setDesc(taskToEdit.task_msg);
       setStartDate(new Date(taskToEdit.task_date));
       setTime(tempDate);
+      setUserId(taskToEdit.user_id);
       setUser(assigned_user.name);
     }
   }, [allUsers, taskToEdit]);
