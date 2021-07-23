@@ -1,0 +1,48 @@
+.taskbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 10px auto;
+  width: 19.3rem;
+}
+.task-info > p {
+  color: red;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.desc {
+  display: flex;
+  align-items: center;
+}
+.e-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-edit,
+.btn-snooze,
+.btn-tick {
+  padding: 9px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  cursor: pointer;
+}
+.btn-edit {
+  margin-right: 10px;
+  visibility: hidden;
+}
+.taskbox:hover .btn-edit {
+  visibility: visible;
+}
+.btn-snooze {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+.btn-tick {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.create-task-box {
+  margin-top: 7rem;
+  margin-left: 19rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.box-body {
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.heading {
+  text-align: start;
+  margin-left: 10px;
+}
+.heading > span {
+  color: gray;
+}
+.btn-add {
+  padding: 8px 14px;
+  font-size: 21px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: none;
+}
+.btn-add:hover {
+  background-color: #e2e6ea;
+}

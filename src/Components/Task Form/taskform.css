@@ -1,0 +1,101 @@
+.task-form {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #edf7fc;
+  width: 21.3rem;
+  margin-left: 19rem;
+}
+label > span {
+  text-align: start;
+  display: block;
+  color: gray;
+  font-size: small;
+  margin: 5px 0;
+}
+input {
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  width: 88%;
+}
+input:focus,
+select:focus {
+  outline: none !important;
+  border: 4px solid rgba(113, 158, 206, 0.5);
+  border-radius: 6px;
+}
+.inp {
+  width: 95%;
+}
+.inp-date-time {
+  padding: 7px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 78%;
+}
+.select {
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  width: 100%;
+}
+.date-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.date-time > label {
+  width: 100%;
+}
+.date-box {
+  display: flex;
+  align-items: center;
+}
+.date-box-icon-wrapper {
+  background-color: rgba(0, 0, 0, 0.125);
+  padding: 5px 8px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btns-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btns {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btn-delete {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.delete-svg{
+  font-size: 19px;
+  color: blue;
+  margin-top: 36px;
+}
+.btn-add-rem {
+  padding: 10px 20px;
+  margin: 0 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-cancel {
+  background-color: red;
+}
+.btn-save {
+  background-color: green;
+}
